@@ -165,8 +165,6 @@ def new_game():
 	Data['difficulty'] = difficulty
 	Data['location'] = location
 
-	# save the game's starting data in a decryptable string
-
 	input("""Press ENTER to continue.""")
 	clear_console()
 	print(f"""
@@ -211,33 +209,20 @@ print(story)
 yn = input(">>> ")
 if yn[0].lower == 'y':
 	if Data['difficulty'][0].lower() == 'e':
-		print(
-		 "He is friendly. He offeres you a drink. You sit with him and discuss the event..."
-		)
-		print(
-		 "The Man: Very strange, this. Only us in this massively popular place, what happened?"
-		)
+		print("He is friendly. He offeres you a drink. You sit with him and discuss the event...")
+		print("The Man: Very strange, this. Only us in this massively popular place, what happened?")
 		print("You: I don't know, seems to be a major event...")
 		print("You both start conspiring...")
-
 	elif Data['difficulty'][0].lower() == 'm':
-		print(
-		 "He is sociable. He offeres you a drink. You sit with him and discuss the event..."
-		)
-		print(
-		 "The Man: Very strange, this. Only us in this massively popular place, what happened?"
-		)
+		print("He is sociable. He offeres you a drink. You sit with him and discuss the event...")
+		print("The Man: Very strange, this. Only us in this massively popular place, what happened?")
 		print("You: I don't know, seems to be a major event...")
 		print("You both start conspiring...")
 	elif Data['difficulty'][0].lower() == 'h':
 		rI = random.randint(1, 2) # random chance to be killed by the man (50%)
 		if rI == 1:
-			print(
-			 "He is unsociable. He, out of shock, offeres you a drink. You sit with him and discuss the event..."
-			)
-			print(
-			 "The Man: Very strange, this. Only us in this massively popular place, what happened?"
-			)
+			print("He is unsociable. He, out of shock, offeres you a drink. You sit with him and discuss the event...")
+			print("The Man: Very strange, this. Only us in this massively popular place, what happened?")
 			print("You: I don't know, seems to be a major event...")
 			print("You both start conspiring...")
 		elif rI == 2:
