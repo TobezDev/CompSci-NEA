@@ -1,11 +1,20 @@
-from replit import db as Data  # type: ignore
-# Built-in .env                > (for VSCode)
+# from replit import db as Data  ### Replit .env // Remove and replace with ln #2 for VSCode
+import mysql as Data
 
 from colorama import Fore as col
 import random
 import time
 import sys
 import os
+
+Data.init()
+
+async def connect(Data, key: str, auth: bool):
+	await Data.connect(
+		endpoint_url=f"https://{key}.mysql.tobestech.com/?key=vscode.mysql.{key}?auth={auth}",
+		key=f"{key}",
+		callback=f"https://{key}.callback.mysql.tobestech.com?key=vscode.mysql.failed.{key}?auth={auth}"
+	)
 
 def clear_console():
 	os.system('clear')
