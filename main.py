@@ -21,6 +21,12 @@ async def player(self):
 	self.income = Data["defaut_income"]
 	self.money = Data["default_money"]
 
+def player_died(reason: str):
+	print(col.RED + "--== YOU DIED ==--")
+	print(col.RED + f"""Your character, {Data['username']} died because of {reason}.""")
+
+
+
 if Data['username'] == '' or Data['username'] is None:
 	Data['username'] = f'Default_Username#{random.randint(1,100000)}'
 	# Set a random default username if not already set
@@ -205,20 +211,20 @@ if yn[0].lower == 'y':
 		print("You: I don't know, seems to be a major event...")
 		print("You both start conspiring...")
 	elif Data['difficulty'][0].lower() == 'm':
-		print("He is sociable. He offeres you a drink. You sit with him and discuss the event...")
+		print("He is sociable. He offeres you a coffee. You sit with him and discuss the event...")
 		print("The Man: Very strange, this. Only us in this massively popular place, what happened?")
 		print("You: I don't know, seems to be a major event...")
 		print("You both start conspiring...")
 	elif Data['difficulty'][0].lower() == 'h':
 		rI = random.randint(1, 2) # random chance to be killed by the man (50%)
 		if rI == 1:
-			print("He is unsociable. He, out of shock, offeres you a drink. You sit with him and discuss the event...")
+			print("He is unsociable but, out of shock, offeres you a drink. You sit with him and discuss the event...")
 			print("The Man: Very strange, this. Only us in this massively popular place, what happened?")
 			print("You: I don't know, seems to be a major event...")
 			print("You both start conspiring...")
 		elif rI == 2:
 			print(col.ORANGE + "You falsely trusted the man. He was not friendly.")
-			print(col.RED + "-= YOU DIED =-")
+			player_died()
 	elif Data['difficulty'][0].lower() == 'i':
 		rI = random.randint(1, 10) # random chance to be killed by the man (80%)
 		if rI > 8:
@@ -226,7 +232,17 @@ if yn[0].lower == 'y':
 			print("You wonder what you did wrong...")
 		else:
 			print(col.ORANGE + "You falsely trusted the man. He was not friendly.")
-			print(col.RED + "-= YOU DIED =-")
+			player_died()
 elif yn[0].lower() == 'n':
-	pass
-	#if player does not trust the man
+	if Data['difficulty'][0].lower() == 'e':
+		
+		pass
+	elif Data['difficulty'][0].lower() == 'm':
+		#med
+		pass
+	elif Data['difficulty'][0].lower() == 'h':
+		#hard
+		pass
+	elif Data['difficulty'][0].lower() == 'i':
+		#insane
+		pass
