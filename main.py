@@ -35,6 +35,7 @@ def player_died(reason: str):
 	print(col.RED + f"""Your character, {Data['username']} died because of {reason}.""")
 	exit("you died")
 
+connect('', True)
 
 
 if Data['username'] == '' or Data['username'] is None:
