@@ -1,5 +1,3 @@
-# see .md for more info
-
 from replit import db as Data  # type: ignore
 # Built-in .env                > (for VSCode)
 
@@ -9,10 +7,8 @@ import time
 import sys
 import os
 
-
 def clear_console():
 	os.system('clear')
-
 
 def typingPrint(text):
 	for character in text:
@@ -20,12 +16,10 @@ def typingPrint(text):
 		sys.stdout.flush()
 		time.sleep(0.02)
 
-
 async def player(self):
 	self.health = Data["default_health"]
 	self.income = Data["defaut_income"]
 	self.money = Data["default_money"]
-
 
 if Data['username'] == '' or Data['username'] is None:
 	Data['username'] = f'Default_Username#{random.randint(1,100000)}'
@@ -33,12 +27,9 @@ if Data['username'] == '' or Data['username'] is None:
 
 username = Data['username']
 
-
-# error handler
 def error(Exception):
 	with Exception as e:
 		print(e)
-
 
 def settings():
 	print("""
