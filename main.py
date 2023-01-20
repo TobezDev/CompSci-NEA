@@ -217,7 +217,7 @@ if yn[0].lower == 'y':
 			print("You: I don't know, seems to be a major event...")
 			print("You both start conspiring...")
 		elif rI == 2:
-			print("You falsely trusted the man. He was not friendly.")
+			print(col.ORANGE + "You falsely trusted the man. He was not friendly.")
 			print(col.RED + "-= YOU DIED =-")
 	elif Data['difficulty'][0].lower() == 'i':
 		rI = random.randint(1, 10) # random chance to be killed by the man (80%)
@@ -225,7 +225,7 @@ if yn[0].lower == 'y':
 			print("He is not sociable in any way. He offeres you a drink and leaves.")
 			print("You wonder what you did wrong...")
 		else:
-			print("You falsely trusted the man. He was not friendly.")
+			print(col.ORANGE + "You falsely trusted the man. He was not friendly.")
 			print(col.RED + "-= YOU DIED =-")
 elif yn[0].lower() == 'n':
 	pass
