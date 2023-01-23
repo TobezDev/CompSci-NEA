@@ -9,7 +9,7 @@ import os
 
 Data.init()
 
-async def connect(Data, key: str, auth: bool):
+async def sql_connect(Data, key: str, auth: bool):
 	await Data.connect(
 		key=f"{key}",
 		endpoint_url=f"https://{key}.mysql.tobestech.com/?key=vscode.mysql.{key}?auth={auth}",
@@ -35,7 +35,7 @@ def player_died(reason: str):
 	print(col.RED + f"""Your character, {Data['username']} died because of {reason}.""")
 	exit("You died.")
 
-connect('', True)
+sql_connect('', True)
 
 
 if Data['username'] == '' or Data['username'] is None:
