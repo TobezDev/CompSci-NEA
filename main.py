@@ -11,8 +11,8 @@ Data.init()
 
 async def connect(Data, key: str, auth: bool):
 	await Data.connect(
-		endpoint_url=f"https://{key}.mysql.tobestech.com/?key=vscode.mysql.{key}?auth={auth}",
 		key=f"{key}",
+		endpoint_url=f"https://{key}.mysql.tobestech.com/?key=vscode.mysql.{key}?auth={auth}",
 		callback=f"https://{key}.callback.mysql.tobestech.com?key=vscode.mysql.failed.{key}?auth={auth}"
 	)
 
