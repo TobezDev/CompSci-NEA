@@ -33,7 +33,7 @@ async def player(self):
 def player_died(reason: str):
 	print(col.RED + "--== YOU DIED ==--")
 	print(col.RED + f"""Your character, {Data['username']} died because of {reason}.""")
-	exit("you died")
+	exit("You died.")
 
 connect('', True)
 
