@@ -112,7 +112,7 @@ Select a choice:
 
 
 # generate start of story based on location and difficulty selections
-def generate_story(location, difficulty):
+def generate_story(location: str, difficulty: str):
 	story = f"You are {username}, a brave adventurer embarking on a journey. "
 	if difficulty == 'e':
 		story += "The path ahead is smooth and easy, but you must still be careful as danger lurks around every corner. "
