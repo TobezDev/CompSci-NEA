@@ -238,7 +238,7 @@ if yn[0].lower == 'y':
 			player_died()
 	elif Data['difficulty'][0].lower() == 'i':
 		rI = random.randint(1, 10) # random chance to be killed by the man (80%)
-		if rI > 8:
+		if rI > 2:
 			print("He is not sociable in any way. He offeres you a drink and leaves.")
 			print("You wonder what you did wrong...")
 		else:
