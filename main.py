@@ -246,7 +246,7 @@ if yn[0].lower == 'y':
 			player_died()
 elif yn[0].lower() == 'n':
 	if Data['difficulty'][0].lower() == 'e':
-		
+		#easy
 		pass
 	elif Data['difficulty'][0].lower() == 'm':
 		#med
