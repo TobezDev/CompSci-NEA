@@ -1,5 +1,8 @@
 from colorama import Fore as col
 
+import sys
+import time
+
 async def typingPrint(text):
 	for character in text:
 		sys.stdout.write(character)
