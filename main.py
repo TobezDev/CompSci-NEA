@@ -98,7 +98,7 @@ Select a choice:
 """)
 	selection = input('>>> ')
 	if selection == '1':
-		new_game()
+		create_new_game()
 	elif selection == '2':
 		settings()
 	elif selection == '3':
@@ -122,7 +122,7 @@ def generate_story(location: str, difficulty: str):
 	colprint(green, story)
 
 
-def new_game():
+def create_new_game():
 	Data['player.Username'] = username
 	colprint(green, "Enter a title for this adventure: ")
 	game_title = input('\n>>> ')
