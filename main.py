@@ -11,12 +11,14 @@ import os
 
 Data.init()
 
-async def sql_connect(Data, key: str, auth: bool):
-	await Data.connect(
-		key=f"{key}",
-		endpoint_url=f"https://{key}.mysql.tobestech.com/?key=vscode.mysql.{key}?auth={auth}",
-		callback=f"https://{key}.callback.mysql.tobestech.com?key=vscode.mysql.failed.{key}?auth={auth}"
-	)
+#async def sql_connect(Data, key: str, auth: bool):
+#	await Data.connect(
+#		key=f"{key}",
+#		endpoint_url=f"https://{key}.mysql.tobestech.com/?key=vscode.mysql.{key}?auth={str(auth).lower()}",
+#		callback=f"https://{key}.callback.mysql.tobestech.com?key=vscode.mysql.failed.{key}?auth={str(auth).lower()}"
+#	)
+#
+#sql_connect(Data, '', True)
 
 def clear_console():
 	os.system('clear')
