@@ -30,3 +30,4 @@ async def colprint(color: str, text: str):
         typingPrint(col.WHITE + text)
     else:
         raise ValueError("Value color is not in allowed range.")
+
