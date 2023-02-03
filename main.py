@@ -74,3 +74,71 @@ while True:
         break
 
 conn.close()
+
+story = f"You are approached by a man, he says he is the head of the {Data['location']}. Do you trust him? (y/n)"
+colprint('green', story)
+
+yn = input(">>> ")
+if yn[0].lower == 'y':
+	if Data['difficulty'][0].lower() == 'e':
+		colprint(
+		 'green',
+		 "He is friendly. He offeres you a drink. You sit with him and discuss the event..."
+		)
+		colprint(
+		 'green',
+		 "The Man: Very strange, this. Only us in this massively popular place, what happened?"
+		)
+		colprint('green', "You: I don't know, seems to be a major event...")
+		colprint('green', "You both start conspiring...")
+	elif Data['difficulty'][0].lower() == 'm':
+		colprint(
+		 'green',
+		 "He is sociable. He offeres you a coffee. You sit with him and discuss the event..."
+		)
+		colprint(
+		 'green',
+		 "The Man: Very strange, this. Only us in this massively popular place, what happened?"
+		)
+		colprint('green', "You: I don't know, seems to be a major event...")
+		colprint('green', "You both start conspiring...")
+	elif Data['difficulty'][0].lower() == 'h':
+		rI = random.randint(1, 2)  # random chance to be killed by the man (50%)
+		if rI == 1:
+			colprint(
+			 'green',
+			 "He is unsociable but, out of shock, offeres you a drink. You sit with him and discuss the event..."
+			)
+			colprint(
+			 'green',
+			 "The Man: Very strange, this. Only us in this massively popular place, what happened?"
+			)
+			colprint('green', "You: I don't know, seems to be a major event...")
+			colprint('green', "You both start conspiring...")
+		elif rI == 2:
+			colprint('orange', "You falsely trusted the man. He was not friendly.")
+			player_died()
+	elif Data['difficulty'][0].lower() == 'i':
+		rI = random.randint(1, 10)  # random chance to be killed by the man (80%)
+		if rI > 2:
+			colprint(
+			 'orange',
+			 "He is not sociable in any way. He offeres you a drink and leaves.")
+			colprint('orange', "You wonder what you did wrong...")
+		else:
+			colprint('orange', "You falsely trusted the man. He was not friendly.")
+			player_died()
+elif yn[0].lower() == 'n':
+	if Data['difficulty'][0].lower() == 'e':
+		#easy
+		pass
+	elif Data['difficulty'][0].lower() == 'm':
+		#med
+		pass
+	elif Data['difficulty'][0].lower() == 'h':
+		rI = random.randint(1,2)
+		pass
+	elif Data['difficulty'][0].lower() == 'i':
+		rI = random.randint(1,10)
+		pass
+
